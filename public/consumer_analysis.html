@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>벨류싸이클 AI 자동화 Ver 1.0</title>
+  <link rel="stylesheet" href="/consumer_analysis.css"> 
+</head>
+<body>
+  <h1>벨류싸이클 1단계, 구매욕구 해킹</h1>
+
+  <!-- 질문과 예시 컨테이너 -->
+  <div class="top-container">
+    <div id="question-container">
+      <div class="input-field">
+        <div>
+          <div class="box">
+
+            <div class="input-field">
+              <label for="item">분석하려는 아이템:</label>
+              <textarea id="item" placeholder="예: 가죽 필통" rows="1"></textarea>
+            </div>
+
+            <div class="input-field">
+              <label for="username">사용자 ID</label>
+              <input type="text" id="username" placeholder="예: Alice" />
+            </div>
+
+          <div class="input-field">
+            <label for="target-gender">주 타겟의 성별:</label>
+            <select id="target-gender">
+              <option value="">성별을 선택하세요</option>
+              <option value="남성">남성</option>
+              <option value="여성">여성</option>
+              <option value="기타">남성&여성 비슷</option>
+            </select>
+          </div>
+          
+          <div class="input-field">
+            <label for="target-age">주 타겟의 연령대:</label>
+            <select id="target-age">
+              <option value="">연령대를 선택하세요</option>
+              <option value="20대">20대</option>
+              <option value="30대">30대</option>
+              <option value="40대">40대~50대</option>
+            </select>
+          </div>
+          
+          <div class="input-field">
+            <label for="trend">1페이지 트렌드 3가지:</label>
+            <textarea id="trend" placeholder="예: 트렌드 1, 트렌드 2, 트렌드 3" rows="2"></textarea>
+          </div>
+        </div>
+        
+        <div>
+
+      <div id="example">
+        <button id="ask-button">벨류싸이클 해킹하기</button>
+        <p><span class="highlight">&nbsp;&nbsp;질문 예시:</span></p>
+        <ul>
+          <li>트렌드 3개를 적을때는 전체적으로 보이는</li>
+              3가지 특징을 적어주면 됩니다.</li><br><br>
+          <li>EX)전반적으로 고급스러운 느낌이 나고</li>
+              가죽이거나 패브릭상품이 많아.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <!-- 이미지 출력 컨테이너 -->
+  <div id="image-container" style="display: none;">
+    <img id="response-image" src="assets/images/diagram.jpg" alt="diagram">
+  </div>
+  
+  <div id="forbidden-message" style="display:none; color:#02fe85;">금지된 단어가 포함되어 있습니다.</div>
+
+  <!-- 초기화 버튼 (이미지 아래) -->
+  <button id="clear-button" style="display: none;">초기화 - 처음화면으로 돌아갑니다.</button>
+
+  <!-- 답변 박스 (최하단에 위치) -->
+  <div id="answer-container" style="display: none; text-align: left;">
+    <p id="answer">오래 기다리셨습니다. 드디어 소비자의 구매욕구를 벨류해킹에 성공했습니다.</p>
+  </div>
+
+  <!-- 정답 형식 적용된 결과 표시 -->
+  <div id="formatted-answer-container" style="display: none; text-align: left;">
+    </span><br><br><span class="highlight">1. 첫 번째 이유:</span><br><br>
+    애완견에 대한 애정 소비자들이 귀여운 강아지 카시트를 구매하는 가장 큰 이유는 자신의 애완견에 대한 애정 때문입니다. 강아지를 가족처럼 생각하는 소비자들은 강아지의 편안함을 위해 푹신푿한 카시트를 선택하게 됩니다.
+
+    </span><br><br><span class="highlight">2. 두 번째 이유:</span><br><br>
+    안전성 확보 강아지 카시트는 강아지를 안전하게 운반할 수 있는 도구로, 강아지의 안전을 위해 반드시 필요한 아이템입니다. 따라서, 소비자들은 강아지의 안전을 위해 카시트를 구매할 수밖에 없는 상황이 됩니다.
+
+    </span><br><br><span class="highlight">3. 세 번째 이유:</span><br><br>
+    감성적 만족감 귀여운 디자인의 강아지 카시트는 소비자에게 감성적인 만족감을 제공합니다. 이는 강아지를 사랑하는 마음을 표현하는 방법 중 하나로, 이를 통해 소비자는 강아지에 대한 사랑을 더욱 드러내게 됩니다.
+
+    </span><br><br><span class="highlight">4. 네 번째 이유:</span><br><br>
+    분위기 생성 귀여운 강아지 카시트는 자동차 내부의 분위기를 한층 더 향상시킵니다. 이는 소비자가 자신의 감성과 스타일을 표현하는 수단이기도 하며, 이를 통해 자신만의 공간을 만들어 나가는 즐거움을 느낍니다.
+
+    </span><br><br><span class="highlight">5. 다섯 번째 이유:</span><br><br>
+    경제적 이득 강아지 카시트는 강아지를 안전하게 운반할 수 있게 해주므로, 강아지의 상해나 질병을 예방할 수 있습니다. 이는 결국 소비자에게 경제적인 이득을 제공합니다.
+  </div>
+
+  <!-- 로딩 비디오 컨테이너 -->
+  <div id="loading-video-container" style="position: relative; display: none;">
+    <video id="loading-video" autoplay loop muted width="800" height="450">
+      <source src="assets/videos/loading.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <!-- 로딩 메시지: 로딩 비디오 위에 배치 -->
+    <div id="loading-message">현재 벨류해킹중입니다. 기존 70분 걸리던 벨류해킹을 1분 안에 처리 중입니다....</div>
+  </div>
+
+  <div id="answer"></div>
+
+  <!-- 404 문제 해결 방안 1: 직접 public/app.js 파일 생성 (빈 파일이라도 OK) -->
+  <script src="/consumer_analysis.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const askButton = document.getElementById("ask-button");
+      const forbiddenMessage = document.getElementById("forbidden-message");
+
+      // 금지어 리스트 설정
+      const forbiddenWords = ["챗gpt", "챗지피티", "프롬프트", "프롬프터", "명령어"];
+
+      // 금지어 필터링 함수
+      function containsForbiddenWords(input) {
+        return forbiddenWords.some(word => input.toLowerCase().includes(word));
+      }
+
+      if (askButton) {
+        askButton.addEventListener("click", () => {
+          const gender = document.getElementById("target-gender").value.trim();
+          const age = document.getElementById("target-age").value.trim();
+          // 문자열 보간시 백틱(`) 필수
+          const targetGroup = `${gender} ${age}`;
+
+          const item = document.getElementById("item").value.trim();
+          const trend = document.getElementById("trend").value.trim();
+          const question = `${targetGroup} ${item} ${trend}`;
+
+          if (containsForbiddenWords(question)) {
+            forbiddenMessage.style.display = "block";
+            return;
+          } else {
+            forbiddenMessage.style.display = "none";
+            // 여기서 실제 질문을 서버에 보내는 로직을 넣을 수도 있음 (ex: fetch('/analyze-consumer', ...))
+          }
+        });
+      }
+    });
+  </script>
+</body>
+</html>

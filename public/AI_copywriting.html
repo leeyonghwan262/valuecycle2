@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Copywriting</title>
+    <link rel="stylesheet" href="AI_copywriting.css">
+</head>
+<body>
+    <div id="global-regenerate-container">
+        <button id="regenerate-btn" style="display:none;">재생성하기</button>
+    </div>
+
+    <div id="loading-video-container" style="display:none;">
+        <video id="loading-video" autoplay loop muted width="800" height="450">
+            <source src="assets/videos/loading.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <p class="loading-message">벨류싸이클AI에서 100분 정도 걸리던<br>카피라이팅 작업을 1분만에 처리중입니다....</p>
+    </div>
+
+    <div id="top-container">
+        <h1>AI 카피라이팅 생성기</h1>
+        <div class="box">
+            <label>사용자 ID</label>
+            <input type="text" id="username" placeholder="예: Alice" />
+          </div>
+        <div class="input-field">
+            <label for="keywords">키워드</label>
+            <input type="text" id="keywords">
+        </div>
+        <div class="input-field">
+            <label for="category">상위 카테고리</label>
+            <input type="text" id="category">
+        </div>
+        <div class="input-field">
+            <label for="gender">성별</label>
+            <select id="gender">
+              <option value="">선택</option>
+              <option value="남성">남성</option>
+              <option value="여성">여성</option>
+              <option value="기타">기타</option>
+            </select>
+        </div>
+        <div class="input-field">
+            <label for="age">연령대</label>
+            <select id="age">
+              <option value="">선택</option>
+              <option value="10대">10대</option>
+              <option value="20대">20대</option>
+              <option value="30대">30대</option>
+              <option value="40대">40대</option>
+              <option value="50대 이상">50대 이상</option>
+            </select>
+        </div>
+        <div class="input-field">
+            <label for="purpose">용도</label>
+            <input type="text" id="purpose">
+        </div>
+        <div class="input-field">
+            <label for="feature-1">기능 1</label>
+            <textarea id="feature-1"></textarea>
+        </div>
+        <div class="input-field">
+            <label for="feature-2">기능 2</label>
+            <textarea id="feature-2"></textarea>
+        </div>
+        <div class="input-field">
+            <label for="feature-3">기능 3</label>
+            <textarea id="feature-3"></textarea>
+        </div>
+
+        <button id="generate-benefits-btn">기능/혜택/의미 분석하기</button>
+    </div>
+
+    <div id="answer-container" style="display:none;">
+        <div id="answerElement" style="margin-bottom: 20px;"></div> 
+        <!-- 위에 margin-bottom으로 공백 추가 -->
+
+        <button id="generate-copywriting-btn">AI 카피라이팅 생성</button>
+    </div>
+
+    <div id="copywriting-container" style="display:none;">
+        <!-- 기능별로 .copywriting-feature-block 안에 헤드라인5개/카피5개를 모두 삽입
+             예시:
+             <div class="copywriting-feature-block">
+                <h3>기능 1 이름</h3>
+                <div class="copywriting-pair-block">
+                    <div>3단헤드라인1</div>
+                    <div>카피라이팅1</div>
+                </div>
+                ... 총 5개 pair-block ...
+             </div>
+        -->
+        <div id="copywriting-result"></div>
+    </div>
+
+    <script src="AI_copywriting.js"></script>
+</body>
+</html>

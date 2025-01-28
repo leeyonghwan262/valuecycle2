@@ -1,0 +1,103 @@
+<!-- design_analysis.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>디자인 분석 AI 버전 1.0</title>
+  <link rel="stylesheet" href="design_analysis.css" />
+</head>
+
+<body>
+  <h1>디자인 분석하기</h1>
+
+  <div id="loading-video-container" style="display:none;">
+    <video id="loading-video" autoplay loop muted width="800" height="450">
+        <source src="assets/videos/loading.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <p class="loading-message">벨류싸이클AI에서 15분 정도 걸리던<br>디자인 분석을 20초만에 처리중입니다....
+    </p>
+</div>
+
+
+  <!-- 이미지와 텍스트 설명을 업로드하는 HTML 폼 -->
+  <form id="upload-form">
+    <label for="image-input">이미지를 업로드하세요:</label>
+    <input type="file" id="image-input" name="image" accept="image/*" />
+   
+    <div class="input-field">
+      <label for="username">사용자 ID</label>
+      <input type="text" id="username" placeholder="예: Alice" />
+    </div>
+
+
+    <!-- 소비자 텍스트(주 타겟의 성별, 연령대 등) -->
+    <label for="category-text-3">아이템 메인 키워드:</label>
+    <textarea
+      id="category-text-3"
+      name="categorytext3"
+      placeholder="예: 가죽필통"
+      rows="2"
+    ></textarea>
+
+
+    <!-- 소비자 텍스트(주 타겟의 성별, 연령대 등) -->
+    <label for="consumer-text">주 타겟의 성별과 연령대:</label>
+    <textarea
+      id="consumer-text"
+      name="consumerText"
+      placeholder="예: 30대 남성"
+      rows="2"
+    ></textarea>
+
+    <!-- 상위 카테고리 -->
+    <label for="category-text-1">상위 카테고리 3가지 입력:</label>
+    <textarea
+      id="category-text-1"
+      name="categoryText1"
+      placeholder="예: 패션, 인테리어, 그래픽"
+      rows="2"
+    ></textarea>
+
+    <!-- 디자인 그래프 위치 -->
+    <label for="category-text-2">디자인 그래프 위치 (예: 캐주얼 & 마니악 등):</label>
+    <textarea
+      id="category-text-2"
+      name="categoryText2"
+      placeholder="예: 캐주얼 & 마니악"
+      rows="2"
+    ></textarea>
+
+    <!-- 로딩 비디오 영역 (처음에는 display:none) -->
+  <div id="loading-video-container" style="display: none; margin: 20px 0;">
+    <video id="loading-video" width="500" height="500" autoplay loop muted>
+      <source src="loading.mp4" type="video/mp4" />
+      로딩 비디오를 재생할 수 없습니다.
+    </video>
+    <p>분석 중입니다. 잠시만 기다려주세요...</p>
+  </div>
+
+    <!-- 추후에 추가 설명이 필요하다면 textarea를 더 추가해도 됨 -->
+    <!-- <textarea id="description" name="description" placeholder="추가 설명..."></textarea> -->
+
+    <button type="button" id="analyze-button">이미지 분석</button>
+  </form>
+
+  <!-- (C) 이미지 미리보기 컨테이너 (처음엔 숨김) -->
+  <div id="preview-container" style="display: none; margin-top: 20px;">
+    <img
+      id="preview-image"
+      alt="Uploaded Image Preview"
+      style="width: 500px; height: 500px; object-fit: cover;"
+    />
+  </div>
+  <!-- 분석 결과 -->
+  <div id="result-container">
+    <p id="result-desc"></p>
+    <div id="result-graphic" style="margin-top: 20px;"></div>
+  </div>
+
+  <script src="design_analysis.js" defer></script>
+</body>
+</html>

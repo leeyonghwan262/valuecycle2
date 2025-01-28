@@ -1,0 +1,283 @@
+/* 
+  aiCopywriting.module.css
+  - 모든 전역/태그/ID 선택자를 로컬 클래스(.xxx)로 변경
+  - "body { ... }" => ".pageContainer"
+  - "#something" => ".something"
+  - "button { ... }" => ".localButton"
+  - "h1 { ... }" => ".title"
+  - 기타 display:none 등도 클래스에서 관리
+*/
+
+/* 전체 페이지 컨테이너 역할 (원래 body 스타일) */
+.pageContainer {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  margin: 20px; /* 페이지 전체 여백 */
+}
+
+/* 상단 "재생성" 영역 (원래 #global-regenerate-container) */
+.regenerateContainer {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  z-index: 2000;
+  display: none; /* 초기 숨김 */
+}
+
+/* 재생성 버튼 (원래 #regenerate-btn) */
+.regenerateBtn {
+  display: none; /* 초기 숨김 */
+}
+
+/* 별도로 "복사 생성" 용 컨테이너 (원래 #global-regenerate-copywriting-container) */
+.regenerateCopywritingContainer {
+  position: fixed;
+  top: 100px;
+  right: 20px;
+  z-index: 2000;
+  display: none; /* 초기 숨김 */
+}
+.regenerateCopywritingContainer .copywritingButton {
+  background-color: #82edc1;
+  border: none;
+  color: #121212;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+.regenerateCopywritingContainer .copywritingButton:hover {
+  background-color: #6ad79e;
+  box-shadow: 0 0 8px rgba(106,215,158,0.5);
+}
+
+/* 상단 입력 영역 (원래 #top-container) */
+.topContainer {
+  width: 70%;
+  margin: 50px auto;
+  background: #111;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  text-align: left;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+/* 답변 영역 (원래 #answer-container, 기본 숨김) */
+.answerContainer {
+  width: 70%;
+  margin: 50px auto;
+  background: #222;
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  text-align: left;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  display: none; /* 초기 숨김 */
+}
+
+/* 최종 카피라이팅 결과 영역 (원래 #copywriting-container, 기본 숨김) */
+.copywritingContainer {
+  width: 70%;
+  margin: 50px auto;
+  background: #222;
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  text-align: left;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  position: relative;
+  display: none; /* 초기 숨김 */
+}
+
+/* 제목 (원래 h1) */
+.title {
+  font-size: 40px;
+  font-weight: bold;
+  background: linear-gradient(90deg, #02fe85 0%, #02fe85 20%, #75ffd6 50%, #75ffd6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 50px;
+}
+
+/* 민트 라벨 (원래 .mint-label) */
+.mintLabel {
+  color: #82edc1;
+  font-weight: bold;
+}
+
+/* 입력 필드 그룹 (원래 .input-field) */
+.inputField {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.inputField label {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #82edc1;
+  white-space: nowrap;
+}
+
+/* 폼 컨트롤 (원래 input, select, textarea) */
+.formControl {
+  padding: 12px;
+  background-color: #333;
+  border: 1px solid #333;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 16px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.3;
+}
+.formControl:focus {
+  border-color: #82edc1;
+  box-shadow: 0 0 5px rgba(130,237,193,0.5);
+  outline: none;
+}
+
+/* 로컬 버튼 (원래 button { ... }) */
+.localButton {
+  background-color: #82edc1;
+  border: none;
+  color: #121212;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+.localButton:hover {
+  background-color: #6ad79e;
+  box-shadow: 0 0 8px rgba(106,215,158,0.5);
+}
+
+/* 로딩 비디오 컨테이너 (원래 #loading-video-container) */
+.loadingVideoContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 1);
+  display: none; /* 기본 숨김 */
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 1000;
+  padding-top: 100px;
+}
+
+/* 비디오 (원래 #loading-video) */
+.loadingVideo {
+  margin-bottom: 20px;
+}
+
+/* 로딩 메시지 (원래 .loading-message) */
+.loadingMessage {
+  font-size: 24px;
+  color: #fff;
+  font-weight: bold;
+  white-space: pre-wrap;
+  line-height: 1.5;
+  text-align: center;
+  margin-top: -100px;
+}
+
+/* 결과/답변 텍스트 (원래 #answerElement, #copywriting-result) */
+.answerElement,
+.copywritingResult {
+  white-space: pre-wrap;
+  text-align: left;
+  color: #fff;
+}
+/* answerElement 내부 h3 */
+.answerElement h3 {
+  font-size: 24px;
+  margin: 20px 0 10px;
+  color: #02fe85;
+}
+
+/* 기능박스 (원래 .feature-block) */
+.featureBlock {
+  margin-bottom: 30px;
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* 혜택/의미 섹션 (원래 .benefit-meaning-block) */
+.benefitMeaningBlock div {
+  color: #fff;
+}
+.benefitMeaningBlock .label {
+  color: #82edc1;
+  font-weight: bold;
+}
+.benefitMeaningBlock .answer {
+  color: #fff;
+  margin-left: 5px;
+}
+
+/* 체크박스 라벨 (원래 .checkbox-label) */
+.checkboxLabel {
+  display: inline-flex;
+  align-items: center;
+  color: #fff;
+}
+.checkboxLabel input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+/* 카피라이팅 기능 박스 (원래 .copywriting-feature-block) */
+.copywritingFeatureBlock {
+  background-color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  border: 1px solid #02fe85;
+  margin-bottom: 40px;
+}
+.copywritingFeatureBlock h3 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #02fe85;
+  margin-bottom: 20px;
+}
+
+/* 카피라이팅 페어 블록 (원래 .copywriting-pair-block) */
+.copywritingPairBlock {
+  margin-bottom: 20px;
+  padding: 10px;
+  background-color: #111;
+  border-radius: 8px;
+  border: 1px solid #82edc1;
+}
+.copywritingPairBlock div {
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+/* 첫 번째 div => 3단 헤드라인(민트) */
+.copywritingPairBlock div:first-child {
+  color: #82edc1;
+  font-weight: bold;
+}
+/* 두 번째 div => 카피라이팅 내용(흰색) */
+.copywritingPairBlock div:nth-child(2) {
+  color: #fff;
+  opacity: 0.9;
+}
