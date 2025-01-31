@@ -11,7 +11,7 @@ export default function CoinIndexPage() {
   const [showCouponInput, setShowCouponInput] = useState(false); // 쿠폰 입력 영역 표시 여부
 
   // 서버 URL (예시)
-  const BASE_URL = "http://localhost:3000";
+  const BASE_URL = "https://value-hunter.net";
 
   // 2) 결과를 표시하는 함수
   function showResultBox(message) {
