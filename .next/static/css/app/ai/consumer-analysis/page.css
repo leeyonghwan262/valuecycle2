@@ -1,0 +1,265 @@
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[5].use[3]!./src/app/ai/consumer-analysis/consumer-analysis.module.css ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************/
+/* consumer-analysis.module.css */
+
+/* 
+  [A] 페이지 전체 컨테이너 
+  - 원래 .myContainer 대신 .container로 이름 변경
+*/
+.consumer-analysis_container__e28_g {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+/* 
+  [B] 헤드라인 (원래 h1 스타일)
+*/
+.consumer-analysis_headline__2r7nd {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  background: linear-gradient(90deg, #02fe85 0%, #02fe85 20%, #75ffd6 50%, #75ffd6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 20px;
+}
+
+/* 
+  [C] 공통 버튼 스타일 (.button)
+*/
+.consumer-analysis_button__4X8fX {
+  background-color: #82edc1;
+  border: none;
+  color: #121212;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease,
+              box-shadow 0.3s ease,
+              transform 0.2s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  text-transform: uppercase;
+}
+.consumer-analysis_button__4X8fX:hover {
+  background-color: #6ad79e;
+  box-shadow: 0 0 8px rgba(106, 215, 158, 0.5);
+  transform: translateY(-5px);
+}
+.consumer-analysis_button__4X8fX:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* askButton → 폰트 조금 크게 */
+.consumer-analysis_askButton__bGKU9 {
+  display: block;    
+  margin: 0 auto 20px; /* X축 가운데 정렬 + 아래 여백 */
+  font-size: 1.8rem;   /* 버튼 폰트 더 키우기 (예: 1.8rem) */
+  padding: 16px 32px;  /* 필요 시 버튼 패딩도 더 키움 */
+}
+
+/* clearButton → 숨김 처리 */
+.consumer-analysis_clearButton__IFQXO {
+  display: none;
+  margin-bottom: 15px;
+}
+
+/* 
+  [D] 입력 필드 (.inputField) + 라벨(.inputLabel)
+*/
+.consumer-analysis_inputField__u4SAP {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.consumer-analysis_inputLabel__YvHIR {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #82edc1; 
+}
+
+/*
+  [E] 공통 인풋/셀렉트/텍스트영역 
+*/
+.consumer-analysis_inputBox__fDkaJ, 
+.consumer-analysis_selectBox__RVqlp,
+.consumer-analysis_textareaBox__RIwI3 {
+  padding: 12px;
+  width: 500px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #333;
+  border: 1px solid #333;
+  border-radius: 8px;
+  font-family: 'Arial', sans-serif;
+  line-height: 1.3;
+  resize: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.consumer-analysis_inputBox__fDkaJ:focus,
+.consumer-analysis_selectBox__RVqlp:focus,
+.consumer-analysis_textareaBox__RIwI3:focus {
+  border-color: #82edc1;
+  box-shadow: 0 0 5px rgba(130, 237, 193, 0.5);
+  outline: none;
+}
+
+/*
+  [F] 예시 박스 (기존 #example → .exampleBox)
+*/
+.consumer-analysis_exampleBox__ZeR6l {
+  width: 380px;
+  font-size: 16px;
+  color: #ccc;
+  background-color: #1a1a1a;
+  padding: 15px;
+  border: 1px solid #333;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+
+/* 강조 텍스트 */
+.consumer-analysis_highlight__w_vPk {
+  color: #02fe85;
+  font-weight: bold !important;
+}
+
+.consumer-analysis_exampleBox__ZeR6l ul {
+  margin: 0;
+  padding-left: 20px;
+  text-align: left;
+  width: 100%;
+}
+.consumer-analysis_exampleBox__ZeR6l li {
+  margin-bottom: 5px;
+}
+
+/*
+  [G] 짙은 회색 박스 (.box)
+*/
+.consumer-analysis_box__9mVGg {
+  background-color: #111;
+  border: 1px solid #333;
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+/*
+  [H] 상단 질문 (.topContainer)
+*/
+.consumer-analysis_topContainer__Zq2Ls {
+  display: flex;
+  gap: 20px;
+  background-color: #111;
+  border: 1px solid #333;
+  border-radius: 14px;
+  padding: 20px;
+  width: -moz-fit-content;
+  width: fit-content;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/*
+  [I] 답변 영역 (.answerContainer)
+*/
+.consumer-analysis_answerContainer__ukmbU {
+  display: none; /* 기본적으로 숨김이라고 가정 */
+  width: 70%;
+  margin: 50px auto;
+  background-color: #222;
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  text-align: left;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  line-height: 1.6;
+  font-size: 1.4rem;
+}
+
+/*
+  [J] 이미지 박스 (.imageContainer, .responseImage)
+*/
+.consumer-analysis_imageContainer__52MjS {
+  max-width: 800px;
+  margin: 0 auto 20px;
+  display: none; /* 기본 숨김 가정 */
+  justify-content: center;
+  align-items: center;
+}
+.consumer-analysis_responseImage___rArL {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/*
+  [K] 로딩 비디오 컨테이너 (.loadingVideoContainer)
+*/
+.consumer-analysis_loadingVideoContainer__IC4Rv {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 1);
+  display: none; /* 기본 숨김 */
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  z-index: 1000;
+  padding-top: 100px;
+}
+.consumer-analysis_loadingVideo__se9EE {
+  margin-bottom: 20px;
+  width: 800px;
+  max-width: 90%;
+  height: auto;
+  border-radius: 10px;
+}
+.consumer-analysis_loadingMessage__oNVGK {
+  margin-top: -60px;
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+/*
+  [L] 금지 메시지 (기존 #forbidden-message → .forbiddenMessage)
+*/
+.consumer-analysis_forbiddenMessage__p1_oh {
+  display: none; /* 기본 숨김 */
+  color: #02fe85;
+  font-size: 1.2rem;
+  margin-top: 20px;
+  font-weight: bold;
+}
+

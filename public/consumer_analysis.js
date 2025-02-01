@@ -90,7 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // 5) 서버 요청
             try {
                 console.log("[클라이언트] /analyze-consumer 요청 전송...");
-                const response = await fetch('http://localhost:3000/analyze-consumer', {
+                const response = await fetch('https://value-hunter.net/analyze-consumer', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({

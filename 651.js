@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
     answerElement.innerText = '소비자의 구매욕구 벨류해킹 중입니다...';
         
         try {
-            const response = await fetch('http://localhost:4000/generate-prompt', {
+            const response = await fetch('https://value-hunter.net/generate-prompt', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ keyword: fullQuestion }),

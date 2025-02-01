@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
     formData.append('username', usernameValue);
 
     try {
-      const response = await fetch('http://localhost:3000/analyze-design', {
+      const response = await fetch('https://value-hunter.net/analyze-design', {
         method: 'POST',
         body: formData
       });

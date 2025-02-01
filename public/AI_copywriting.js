@@ -126,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (answerContainer) answerContainer.style.display = 'none';
 
             // (3) username도 함께 서버로 전달
-            fetch('http://localhost:3000/api/generate-copywriting', {
+            fetch('https://value-hunter.net/api/generate-copywriting', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ 
@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
             setLoadingState(true);
-            fetch('http://localhost:3000/api/generate-copywriting', {
+            fetch('https://value-hunter.net/api/generate-copywriting', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ 
@@ -231,7 +231,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function requestBenefitsMeaning({ username, keyword, category, gender, age, purpose, feature1, feature2, feature3 }) {
         setLoadingState(true);
 
-        fetch('http://localhost:3000/api/generate-benefits-meaning', {
+        fetch('https://value-hunter.net/api/generate-benefits-meaning', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ username, keyword, category, gender, age, purpose, feature1, feature2, feature3 })

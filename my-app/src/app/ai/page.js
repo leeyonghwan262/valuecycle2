@@ -24,15 +24,15 @@ export default function HomePage() {
           3단계, AI 카피라이팅
         </Link>
 
-        <Link href="/ai/page3" className={styles.linkButton}>
-          4단계, AI 상세페이지 기획(준비중)
+        <Link href="/ai/killing-copywriting" className={styles.linkButton}>
+          4단계, AI 킬링파트 카피(준비중)
         </Link>
 
-        <Link href="/ai/page4" className={styles.linkButton}>
+        <Link href="/ready1" className={styles.linkButton}>
           5단계, AI 상세페이지 첨삭(준비중)
         </Link>
 
-        <Link href="/ai/page5" className={styles.linkButton}>
+        <Link href="/ai/ready2" className={styles.linkButton}>
           6단계, AI 이미지화(준비중)
         </Link>
       </div>

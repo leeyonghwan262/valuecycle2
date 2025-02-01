@@ -8,7 +8,7 @@ console.log('Using DB file:', dbPath);
 
 const db = new Database(dbPath);
 
-// 2) 테이블 생성
+// 2) users 테이블 생성
 db.exec(`
   CREATE TABLE IF NOT EXISTS users (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -33,7 +33,19 @@ try {
   }
 }
 
-// 4) 샘플 사용자 INSERT - OR REPLACE로 변경
+// 4) history 테이블 생성 (코인 사용/충전/할당 기록)
+db.exec(`
+  CREATE TABLE IF NOT EXISTS history (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER NOT NULL,
+    cost INTEGER NOT NULL,      -- 사용/충전/할당된 양. 양수로만 기록
+    reason TEXT,                -- 'USE', 'CHARGE', 'ASSIGN' 등
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY(user_id) REFERENCES users(id)
+  );
+`);
+
+// 5) 샘플 사용자 INSERT - OR REPLACE
 db.exec(`
   INSERT OR REPLACE INTO users (username, coin_balance, spent_coins)
   VALUES

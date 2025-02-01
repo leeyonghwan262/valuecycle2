@@ -1,0 +1,33 @@
+{
+  "pages": {
+    "/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
+    ],
+    "/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/page.js"
+    ],
+    "/ai/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/ai/page.css",
+      "static/chunks/app/ai/page.js"
+    ],
+    "/ai/consumer-analysis/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/ai/consumer-analysis/page.css",
+      "static/chunks/app/ai/consumer-analysis/page.js"
+    ],
+    "/ai/design-analysis/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/ai/design-analysis/page.css",
+      "static/chunks/app/ai/design-analysis/page.js"
+    ]
+  }
+}
